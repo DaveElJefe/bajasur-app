@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "bajasur-app",
+    "description": "app recompensas bajasur",
     "slug": "bajasur-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,6 +22,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.eljefe.bajasurapp",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

@@ -4,6 +4,8 @@ import { useNavigation, StackActions } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { globalStyles } from '../shared/global';
 import FlatButton from '../shared/flatButton';
+import SearchBar from '../shared/searchBar';
+import FlatText from '../shared/flatText';
 import Card from '../shared/card';
 
 export default function Home(){
@@ -20,10 +22,18 @@ export default function Home(){
     }
 
     return(
-        <View style={globalStyles.container}>
-            <Text style={globalStyles.titleText}>Pantalla de inicio</Text>
-            <FlatButton text='Iniciar sesion' bgColor='#fff' txtColor='#0782F9' onPress={() => goToScreen('Login')}/>
-            <FlatButton text='Programa' bgColor='#fff' txtColor='#0782F9' onPress={() => goToScreen('Program')}/>
+        <View style={styles.container}>
+            <SearchBar inputHolder='Buscar elemento' cameraPress={() => console.log('Abriendo camara')}/>
+            <FlatText text='Promociones' textWeight='normal' textSize={16} alignment='flex-start' textColor='#888'/>
+            <Text style={globalStyles.titleText}>---PRUEBAS---</Text>
+            <FlatButton text='Iniciar sesion' textSize={24} textForm='none' textColor='#fff' bgColor='#0782F9' onPress={() => goToScreen('Login')}/>
+            
+        </View>
+    )
+}
+
+/*
+Estas son las pruebas para los detalles de un producto
             <FlatList
                 data={products}
                 renderItem={({item}) => (
@@ -36,6 +46,17 @@ export default function Home(){
                     </TouchableOpacity>
                 )}
             />
-        </View>
-    )
-}
+*/
+
+const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        marginVertical: '3%',
+        marginHorizontal: '7%'
+    },
+    searchView:{
+        width: '85%',
+        alignItems: 'center',
+        flexDirection: 'row',
+    }
+})
